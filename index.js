@@ -4,6 +4,8 @@ const cors = require('cors');
 require('dotenv').config();
 const MongoClient = require('mongodb').MongoClient;
 
+const port = 5000;
+
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
@@ -62,4 +64,4 @@ client.connect((err) => {
     });
 });
 
-app.listen(precess.env.PORT || 5000);
+app.listen(precess.env.PORT || port);
