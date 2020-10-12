@@ -22,6 +22,10 @@ client.connect((err) => {
     const ordersCollation = client.db('ema-jhon-store').collection('orders');
     console.log('i am connected');
 
+    app.get('/', (req, res) => {
+        res.send('working');
+    });
+
     app.post('/addProduct', (req, res) => {
         const products = req.body;
         console.log(products);
