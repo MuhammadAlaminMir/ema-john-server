@@ -58,4 +58,4 @@ client.connect((err) => {
     });
 });
 
-app.listen(5000);
+app.listen(precess.env.PORT || 5000);
