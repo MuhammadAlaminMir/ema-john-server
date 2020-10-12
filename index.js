@@ -64,4 +64,4 @@ client.connect((err) => {
     });
 });
 
-app.set('port', PORT);
+app.listen('port', PORT);
