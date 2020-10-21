@@ -35,9 +35,12 @@ client.connect((err) => {
         });
     });
     app.get('/products', (req, res) => {
-        productsCollation.find({}).toArray((err, documents) => {
-            res.send(documents);
-        });
+        const search = req.query.search;
+        productsCollation
+            .find({ name: { $regex: search } })
+            .toArray((err, documents) => {
+                res.send(documents);
+            });
     });
     app.get('/product/:key', (req, res) => {
         productsCollation
